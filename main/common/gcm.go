@@ -1,4 +1,4 @@
-package myaes
+package common
 
 import (
 	"crypto/aes"
@@ -30,7 +30,7 @@ func AESEncrypt(password, msg []byte) ([]byte, error) {
 		return nil, err
 	}
 
-	nonce := make([]byte,gcm.NonceSize())
+	nonce := make([]byte, gcm.NonceSize())
 	if _, err := io.ReadFull(rand.Reader, nonce); err != nil {
 		return nil, err
 	}

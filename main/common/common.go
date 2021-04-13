@@ -1,6 +1,9 @@
 package common
 
-import "math/rand"
+import (
+	"fmt"
+	"math/rand"
+)
 
 func RandInt() int {
 	return rand.Int()
@@ -20,6 +23,16 @@ func RandBytes(length int) []byte {
 	_, err := rand.Read(res)
 	if err != nil {
 		return nil
+	}
+
+	return res
+}
+
+func RandPrintable(length int) string {
+	res := ""
+	for len(res) < length {
+		r := 48 + RandInt() % 75
+		res += fmt.Sprintf("%c", r)
 	}
 
 	return res

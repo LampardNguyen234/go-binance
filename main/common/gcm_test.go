@@ -1,4 +1,4 @@
-package myaes
+package common
 
 import (
 	"bytes"
@@ -8,12 +8,10 @@ import (
 )
 
 func TestAESDecrypt(t *testing.T) {
-	msg := []byte("Hello world!!! My name is AES GCM")
-	fmt.Println("msg", msg)
-
-	numTries := 10
+	numTries := 1000
 
 	for i := 0; i < numTries; i++ {
+		msg := RandBytes(RandInt() % 10000)
 		password := make([]byte, 32)
 		_, err := rand.Read(password)
 		if err != nil {
