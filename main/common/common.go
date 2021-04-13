@@ -2,9 +2,14 @@ package common
 
 import (
 	"fmt"
+	"github.com/LampardNguyen234/go-binance/v2"
 	"math/rand"
 )
 
+//Variables
+var BClient *binance.Client
+
+//Functions
 func RandInt() int {
 	return rand.Int()
 }

@@ -1,3 +1,3 @@
 package main
 
-const DEFAULT_API_KEY_FILE = "./api.bin"
+const DEFAULT_API_KEY_FILE = "data/apikey.enc"
